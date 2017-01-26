@@ -17398,7 +17398,7 @@
 	                    onFocus: _this.startEditing,
 	                    onClick: _this.startEditing
 	                }, _this.props.defaultProps),
-	                _this.state.newValue || _this.props.value
+	                _this.state.newValue || _this.props.value || _this.props.placeholder
 	            );
 	        };
 
