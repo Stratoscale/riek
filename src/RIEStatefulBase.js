@@ -34,18 +34,19 @@ export default class RIEStatefulBase extends RIEBase {
     };
 
     componentDidUpdate = (prevProps, prevState) => {
-        var inputElem = ReactDOM.findDOMNode(this.refs.input);
-        if (this.state.editing && !prevState.editing) {
+        const inputElem = ReactDOM.findDOMNode(this.refs.input);
+        const prevEditing = prevProps.hasOwnProperty('editing') ? prevProps.editing : prevState.editing;
+        if (this.editing && !prevEditing) {
             inputElem.focus();
             this.selectInputText(inputElem);
-        } else if (this.state.editing && prevProps.text != this.props.text) {
+        } else if (this.editing && prevProps.text != this.props.text) {
             this.finishEditing();
         }
     };
 
     renderEditingComponent = () => {
         return <input
-            disabled={this.state.loading}
+            disabled={this.loading}
             className={this.makeClassString()}
             defaultValue={this.props.value}
             onInput={this.textChanged}
@@ -74,7 +75,7 @@ export default class RIEStatefulBase extends RIEBase {
     };
 
     render = () => {
-        if(this.state.editing) {
+        if(this.editing) {
             return this.renderEditingComponent();
         } else {
             return this.renderNormalComponent();
