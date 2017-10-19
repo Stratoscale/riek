@@ -1,11 +1,12 @@
 import React from 'react';
 import RIEBase from './RIEBase';
+import PropTypes from 'prop-types'
 
 export default class RIEToggle extends RIEBase {
 
     static propTypes = {
-        textTrue: React.PropTypes.string,
-        textFalse: React.PropTypes.string
+        textTrue: PropTypes.string,
+        textFalse: PropTypes.string
     };
 
     elementClick = (e) => {

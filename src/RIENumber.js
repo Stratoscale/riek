@@ -1,5 +1,6 @@
 import React from 'react';
 import RIEStatefulBase from './RIEStatefulBase';
+import PropTypes from 'prop-types'
 
 export default class RIENumber extends RIEStatefulBase {
 
@@ -8,7 +9,7 @@ export default class RIENumber extends RIEStatefulBase {
     }
 
     static propTypes = {
-        format: React.PropTypes.func
+        format: PropTypes.func
     };
 
     validate = (value) => {
