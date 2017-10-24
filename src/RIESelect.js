@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RIEStatefulBase from './RIEStatefulBase';
+import PropTypes from 'prop-types'
 
 export default class RIESelect extends RIEStatefulBase {
     static propTypes = {
-        options: React.PropTypes.array.isRequired
+        options: PropTypes.array.isRequired
     };
 
     finishEditing = () => {
